@@ -2,10 +2,9 @@
 #include <stdio.h>
 
 /**
- * printf - prints all argument passed to it
- * format: its the character string
- * Description: Prints all elements passes into it and also takes
- * care of foramt specifiers
+ * _printf - prints all argument passed to it
+ * @format: its the character string
+ * Description: Prints all elements passes into it
  *
  * Return: returns the input to std output
  */
