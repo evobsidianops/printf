@@ -35,9 +35,9 @@ int _printf(const char *format, ...)
 			}
 			else if (*p == 's')
 			{
-				str = va_arg(parameters, char*);
-				_putschar(str);
-				length++;
+				str = va_arg(parameters, char *);
+				length += _putschar(str);
+
 			}
 		}
 		else
