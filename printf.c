@@ -14,9 +14,13 @@ int _printf(const char *format, ...)
 	const char *p;
 	int j, length;
 	char *str;
-	
+
 	length = 0;
 	va_start(parameters, format);
+	if (format == NULL)
+		return (1);
+	if (*format == '%')
+		return (1);
 	for (p = format; *p; p++)
 	{
 		if (*p == '%')
@@ -49,7 +53,6 @@ int _printf(const char *format, ...)
 			_printchar(*p);
 			length++;
 		}
-		/* format++;*/
 	}
 	va_end(parameters);
 	return (length);
