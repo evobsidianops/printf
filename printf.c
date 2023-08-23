@@ -36,6 +36,10 @@ int _printf(const char *format, ...)
 			else if (*p == 's')
 			{
 				str = va_arg(parameters, char *);
+				if (str == NULL)
+				{
+					str = "(null)";
+				}
 				length += _putschar(str);
 
 			}
