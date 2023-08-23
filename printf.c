@@ -26,30 +26,24 @@ int _printf(const char *format, ...)
 		{
 			p++;
 			if (*p == '%')
-			{
 				_printchar('%');
 				length++;
-			}
 			else if (*p == 'c' || *p == 's')
 			{
-				specifier_function func = all_functions(*p);
+				specifier_function func;
+
+				func = all_functions(*p);
 				if (func != NULL)
-				{
 					length += func(parameters, length);
-				}
 			}
 			else
-			{
 				_printchar('%');
 				_printchar(*p);
-				length +=2;
-			}
+				length += 2;
 		}
 		else
-		{
 			_printchar(*p);
 			length++;
-		}
 	}
 	va_end(parameters);
 	return (length);

@@ -3,6 +3,7 @@
 /**
  * print_int - prints int
  * @parameters: va_list param
+ * @length: length of return value
  *
  * Return: return 0
  */
@@ -17,14 +18,15 @@ int print_int(va_list parameters, int length)
 
 /**
  * print_str - prints strings
- * @parameter: va_list param
+ * @parameters: va_list param
+ * @length: length of return value
  *
  * Return: returns 0
  */
 int print_str(va_list parameters, int length)
 {
 	char *str;
-	
+
 	str = va_arg(parameters, char *);
 	if (str == NULL)
 	{
