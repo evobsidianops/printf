@@ -12,8 +12,7 @@ int _printf(const char *format, ...)
 {
 	va_list parameters;
 	const char *p;
-	int j, length;
-	char *str;
+	int length;
 
 	length = 0;
 	va_start(parameters, format);
@@ -31,21 +30,13 @@ int _printf(const char *format, ...)
 				_printchar('%');
 				length++;
 			}
-			else if (*p == 'c')
+			else if (*p == 'c' || *p == 's')
 			{
-				j = va_arg(parameters, int);
-				_printchar(j);
-				length++;
-			}
-			else if (*p == 's')
-			{
-				str = va_arg(parameters, char *);
-				if (str == NULL)
+				specifier_function func = all_functions(*p);
+				if (func != NULL)
 				{
-					str = "(null)";
+					length += func(parameters, length);
 				}
-				length += _putschar(str);
-
 			}
 			else
 			{
