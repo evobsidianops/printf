@@ -11,37 +11,42 @@
 int _printf(const char *format, ...)
 {
 	va_list parameters;
-	const char *i;
-	int j;
+	const char *p;
+	int j, length;
 	char *str;
-
+	
+	length = 0;
 	va_start(parameters, format);
-	for (i = format; *i; i++)
+	for (p = format; *p; p++)
 	{
-		if (*format == '%')
+		if (*p == '%')
 		{
-			format++;
-			if (*format == '%')
+			p++;
+			if (*p == '%')
 			{
 				_printchar('%');
+				length++;
 			}
-			else if (*format == 'c')
+			else if (*p == 'c')
 			{
 				j = va_arg(parameters, int);
 				_printchar(j);
+				length++;
 			}
-			else if (*format == 's')
+			else if (*p == 's')
 			{
 				str = va_arg(parameters, char*);
 				_putschar(str);
+				length++;
 			}
 		}
 		else
 		{
-			_printchar(*format);
+			_printchar(*p);
+			length++;
 		}
-		format++;
+		/* format++;*/
 	}
 	va_end(parameters);
-	return (0);
+	return (length);
 }
