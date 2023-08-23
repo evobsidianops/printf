@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_int - prints int
@@ -10,10 +11,11 @@
 int print_int(va_list parameters, int length)
 {
 	int j;
+	length = 0;
 
 	j = va_arg(parameters, int);
-	length += _printchar(j);
-	return (length);
+	 _printchar(j);
+	return (++length);
 }
 
 /**
@@ -26,13 +28,13 @@ int print_int(va_list parameters, int length)
 int print_str(va_list parameters, int length)
 {
 	char *str;
+	length = 0;
 
 	str = va_arg(parameters, char *);
 	if (str == NULL)
 	{
-		str = "(nil)";
+		str = "(null)";
 	}
 	length += _putschar(str);
-
 	return (length);
 }

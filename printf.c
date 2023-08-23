@@ -35,8 +35,7 @@ int _printf(const char *format, ...)
 				specifier_function func;
 
 				func = all_functions(*p);
-				if (func != NULL)
-					length += func(parameters, length);
+				length += func(parameters, length);
 			}
 			else
 			{
