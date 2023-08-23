@@ -11,8 +11,8 @@
 int print_int(va_list parameters, int length)
 {
 	int j;
-	length = 0;
 
+	length = 0;
 	j = va_arg(parameters, int);
 	 _printchar(j);
 	return (++length);
@@ -28,8 +28,8 @@ int print_int(va_list parameters, int length)
 int print_str(va_list parameters, int length)
 {
 	char *str;
-	length = 0;
 
+	length = 0;
 	str = va_arg(parameters, char *);
 	if (str == NULL)
 	{
