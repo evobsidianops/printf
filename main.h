@@ -29,5 +29,7 @@ int _printf(const char *format, ...);
 int print_int(va_list parameters, int length);
 int print_str(va_list parameters, int length);
 specifier_function all_functions(char specifier);
+int print_integer(va_list parameters, int length);
+int print_digit(va_list parameters, int length);
 
 #endif
