@@ -40,12 +40,14 @@ int print_str(va_list parameters, int length)
 }
 /**
  * get_int - Function that print int
- * @num: the paramiter
+ * @parameters: the parameters for the arguments
+ * @length: this is the length
  * Return: Return value
  */
-int get_int(int num)
+int get_int(va_list parameters, int length)
 {
-	int n, val = 0;
+	int num = va_arg(parameters, int);
+	int val = 0;
 
 	if (num == 0)
 	{
@@ -53,10 +55,8 @@ int get_int(int num)
 	}
 	else
 	{
-		n = num / 10;
-		val++;
-		get_int(n);
-		_printchar(num % 10 + '10');
+		val = 1 + get_int(parameters, length);
+		_printchar(num % 10 + '0');
 		return (val);
 	}
 }
