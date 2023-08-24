@@ -38,3 +38,25 @@ int print_str(va_list parameters, int length)
 	length += _putschar(str);
 	return (length);
 }
+/**
+ * get_int - Function that print int
+ * @num: the paramiter
+ * Return: Return value
+ */
+int get_int(int num)
+{
+	int n, val = 0;
+
+	if (num == 0)
+	{
+		return (0);
+	}
+	else
+	{
+		n = num / 10;
+		val++;
+		get_int(n);
+		_printchar(num % 10 + '10');
+		return (val);
+	}
+}
