@@ -59,8 +59,8 @@ int count_num(int digit)
 }
 
 /**
- * print_integer - Prints the integer value
- * @parameter: parameters to be printed
+ * print_digit - Prints the integer value
+ * @parameters: parameters to be printed
  * @length: return of argument
  *
  * Return: returns length of element
@@ -88,34 +88,3 @@ void print_num(int m)
 	_printchar((m % 10) + '0');
 }
 
-/**
- * print_bi - prints out put as binary
- * @parameters: va_list param
- * @length: length to be return
- *
- * Return: return binary value
- */
-/*
-int print_bi(va_list parameters, int length)
-{
-	unsigned int n;
-
-	if (n == 0)
-	{
-		_printchar('0');
-		return (1);
-	}
-	if (n == 1)
-	{
-		_printchar('1');
-		return (1);
-	}
-	else
-	{
-		n = va_arg(parameters, unsigned int);
-		length = print_bi(n / 2);
-		_printchar('0' + n % 2);
-		return (length + 1);
-	}
-}
-*/
