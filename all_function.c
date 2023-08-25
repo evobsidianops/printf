@@ -14,6 +14,8 @@ specifier_function all_functions(char specifier)
 	func_p array[] = {
 		{'c', print_int},
 		{'s', print_str},
+		{'d', print_digit},
+		{'i', print_digit},
 		{0, NULL},
 	};
 

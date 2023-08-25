@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 				_printchar('%');
 				length++;
 			}
-			else if (*p == 'c' || *p == 's')
+			else if (*p == 'c' || *p == 's' || *p == 'd' || *p == 'i' || *p == 'b')
 			{
 				specifier_function func;
 
