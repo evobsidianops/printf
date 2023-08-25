@@ -48,8 +48,12 @@ int print_str(va_list parameters, int length)
 int count_num(int digit)
 {
 	int d;
-
+	
 	d = 0;
+	if (digit < 0)
+		d++;
+	if (digit == 0)
+		d++;
 	while (digit != 0)
 	{
 		digit /= 10;
@@ -81,10 +85,19 @@ int print_digit(va_list parameters, int length)
  */
 void print_num(int m)
 {
+	unsigned int n;
+	
 	if (m < 0)
+	{
 		_printchar('-');
-	if (m / 10)
-		print_num(m / 10);
-	_printchar((m % 10) + '0');
+		n = -m;
+	}
+	else
+	{
+		n = m;
+	}
+	if (n / 10)
+		print_num(n / 10);
+	_printchar((n % 10) + '0');
 }
 
