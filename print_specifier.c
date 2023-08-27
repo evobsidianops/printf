@@ -100,4 +100,3 @@ void print_num(int m)
 		print_num(n / 10);
 	_printchar((n % 10) + '0');
 }
-

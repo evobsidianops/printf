@@ -33,5 +33,5 @@ specifier_function all_functions(char specifier);
 int print_digit(va_list parameters, int length);
 int count_num(int digit);
 void print_num(int m);
-
+int get_bin(va_list bin);
 #endif

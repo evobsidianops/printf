@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 	va_list parameters;
 	const char *p;
 	int length;
+	int count = 0;
 
 	length = 0;
 	va_start(parameters, format);
@@ -41,6 +42,11 @@ int _printf(const char *format, ...)
 				_printchar(*p);
 				length += 2;
 			}
+		}
+		else if (*p == 'b')
+		{
+			count = get_bin(parameters);
+			length += count;
 		}
 		else
 		{
